@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Sidebar Menu -->
+    <div class="flex">
+        <div class="w-64 bg-blue-800 text-white h-screen p-6">
+            <div class="text-2xl font-semibold mb-8">Dashboard</div>
+            <ul>
+                <li class="mb-4">
+                    <a href="#" class="block p-2 rounded-lg hover:bg-blue-700 transition-colors">Dashboard</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="block p-2 rounded-lg hover:bg-blue-700 transition-colors">Submenu 1</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="block p-2 rounded-lg hover:bg-blue-700 transition-colors">Submenu 2</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8">
+            <!-- Topbar com usuário logado -->
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full bg-gray-400"></div>
+                    <div>
+                        <p class="font-semibold text-lg text-gray-800">João Silva</p>
+                        <p class="text-sm text-green-500">Online <span class="text-green-500">&#8226;</span></p>
+                    </div>
+                </div>
+                <button class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">Sair</button>
+            </div>
+
+            <!-- Skeleton Loading da Tabela -->
+            <div id="table-container" class="mb-6">
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="skeleton h-10 bg-gray-300 rounded-lg"></div>
+                    <div class="skeleton h-10 bg-gray-300 rounded-lg"></div>
+                    <div class="skeleton h-10 bg-gray-300 rounded-lg"></div>
+                    <div class="skeleton h-10 bg-gray-300 rounded-lg"></div>
+                </div>
+            </div>
+
+            <!-- Tabela com Dados -->
+            <table id="data-table" class="min-w-full bg-white shadow-lg rounded-lg overflow-hidden">
+                <thead>
+                    <tr class="bg-blue-800 text-white">
+                        <th class="px-6 py-4 text-left">Nome</th>
+                        <th class="px-6 py-4 text-left">Telefone</th>
+                        <th class="px-6 py-4 text-left">Ramal</th>
+                        <th class="px-6 py-4 text-left">Setor</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body" class="text-gray-700">
+                    <!-- Dados da tabela serão injetados aqui via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
